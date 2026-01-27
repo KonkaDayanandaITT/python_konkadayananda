@@ -1,0 +1,30 @@
+-----Datatypes-----
+
+  * Numeric Datatypes: int,float,complex 
+     
+  * Boolean Datatypes: True,False
+        
+  * Sequence Datatypes
+    -> String
+    -> List
+    -> Tuple
+    -> range
+
+  * Set Datatypes
+    -> set
+    -> frozen set
+
+  * Mapping Datatypes
+    -> Dictionary
+
+-----Arrays------
+    -> List
+    -> Array module
+    -> Numpy Array
+
+-----Matrix-----
+ A matrix is a list of lists
+    matrix = [
+        [1,2,3],
+        [4,5,6]
+    ]
