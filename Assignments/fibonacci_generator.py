@@ -1,10 +1,10 @@
 def fibonacci(n):
-    a = 0
-    b = 1
+    prev = 0
+    curr = 1
     count = 0
     while count < n:
-        yield a
-        a, b = b, a + b
+        yield prev
+        prev, curr = curr, prev + curr
         count += 1
 
 
