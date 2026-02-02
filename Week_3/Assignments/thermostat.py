@@ -22,7 +22,7 @@ class Thermostat:
         elif self.current > self.target:
             self.mode = Mode.COOLING
         else:
-            self.Mode = OFF
+            self.Mode = Mode.OFF
             
     def update_current(self, new_current):
         if new_current < 0:
