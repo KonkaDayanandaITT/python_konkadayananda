@@ -1,9 +1,0 @@
-Learned History of Python 
-
-Learned Reasons to learn Python 
-
-Learned about uniqueness of Python 
-
-Learned about Realtime Applications where Python used 
-
-Basic syntax of python ,Comments,Dynamic Typing ,Basic input and output 
