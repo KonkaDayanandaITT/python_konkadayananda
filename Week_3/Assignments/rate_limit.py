@@ -14,9 +14,10 @@ def rate_limit(max_api_calls):
 @rate_limit(6)
 def api_call():
     print("API call executed successfully...")
-    
-for _ in range(8):
-    try:
-        api_call()
-    except Exception as e:
-        print(f"Error occured: {e}")
+
+if __name__ == "__main__":
+    for _ in range(8):
+        try:
+            api_call()
+        except Exception as e:
+            print(f"Error occurred: {e}")

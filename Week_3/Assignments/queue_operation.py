@@ -1,20 +1,19 @@
 class Queue:
     def __init__(self):
-        self.lst = []
+        self._lst = []
 
     def enqueue(self, item):
         print(f"Enqueued item is: {item}")
-        self.lst.append(item)
+        self._lst.append(item)
 
     def dequeue(self):
-        if self.isEmpty():
+        if self.is_empty():
             print("Queue is Empty")
             return
-        print(f"Dequeued item is: {self.lst[0]}")
-        self.lst.pop(0)
+        return self._lst.pop(0)
 
-    def isEmpty(self):
-        return len(self.lst) == 0
+    def is_empty(self):
+        return len(self._lst) == 0
 
 
 queue_a = Queue()
@@ -23,7 +22,7 @@ queue_a.enqueue(20)
 queue_a.enqueue(30)
 queue_a.enqueue(40)
 queue_a.enqueue(50)
-print("Current Queue: ", queue_a.lst)
-queue_a.dequeue()
-queue_a.dequeue()
-print("Updated Queue: ", queue_a.lst)
+print("Current Queue: ", queue_a._lst)
+print("Dequeued item is: ", queue_a.dequeue())
+print("Dequeued item is: ", queue_a.dequeue())
+print("Updated Queue: ", queue_a._lst)

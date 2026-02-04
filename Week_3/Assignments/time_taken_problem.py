@@ -2,9 +2,9 @@ import time
 
 
 def timetaken(func):
-    def inner(number1, number2):
+    def inner(*args, **kwargs):
         start = time.time()
-        result = func(number1, number2)
+        result = func(*args, **kwargs)
         end = time.time()
         print(f"Function {func.__name__} took {end - start:.4f} seconds to execute")
         return result
@@ -14,7 +14,7 @@ def timetaken(func):
 
 @timetaken
 def calculate_multiply(number1, number2):
-    return f"Result:{number1*number2}"
+    return f"Result: {number1*number2}"
 
-
-print(calculate_multiply(2, 3))
+if __name__ == "__main__":
+    print(calculate_multiply(10,12))

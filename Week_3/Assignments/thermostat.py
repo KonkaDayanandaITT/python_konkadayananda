@@ -1,50 +1,45 @@
 from enum import Enum
 
+
 class Mode(Enum):
     OFF = "off"
     HEATING = "heating"
     COOLING = "cooling"
-    
+
+
 class Thermostat:
-    def __init__(self, current, target):
-        if current < 0 or target < 0:
-            print("Temparature Cannot be negative")
-            return
-        
+    def __init__(self, current):
         self.current = current
-        self.target = target
+        self.target = current
         self.mode = Mode.OFF
-        self.update_mode()
-        
+
     def update_mode(self):
         if self.current < self.target:
             self.mode = Mode.HEATING
         elif self.current > self.target:
             self.mode = Mode.COOLING
         else:
-            self.Mode = Mode.OFF
-            
-    def update_current(self, new_current):
-        if new_current < 0:
-            print("Temparature cannot be negative")
-            return
-        
-        self.current = new_current
+            self.mode = Mode.OFF
+
+    def set_target(self, target):
+        if target < 0:
+            raise ValueError("Temperature cannot be negative")
+        self.target = target
         self.update_mode()
-        
+
     def status(self):
         return f"Current: {self.current}, Target:{self.target}, Mode:{self.mode.value}"
-    
+
 
 try:
     current = int(input("Enter current temperature: "))
-    target = int(input("Enter target temparature: "))
+    target = int(input("Enter target temperature: "))
     
-    thermostat = Thermostat(current, target)
+    if current < 0 :
+        raise ValueError("Temperature cannot be negative")
+
+    thermostat = Thermostat(current)
+    thermostat.set_target(target)
     print(thermostat.status())
-    
-    new_curr = int(input("Update current temparature: "))
-    thermostat.update_current(new_curr)
-    print(thermostat.status()) 
 except ValueError as e:
-    print("Error: ", e) 
+    print("Error: ", e)

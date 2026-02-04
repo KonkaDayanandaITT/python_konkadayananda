@@ -1,12 +1,12 @@
 def is_happy(num):
     temp_num = num
-    lst = []
-    visited = lst
-
+    visited = set()
+    
     while temp_num != 1:
         if temp_num in visited:
-            return
-        visited.append(temp_num)
+            return False
+        visited.add(temp_num)
+        
         total = 0
 
         while temp_num > 0:
@@ -22,9 +22,18 @@ def next_happy_number(n):
     n += 1
     while True:
         if is_happy(n):
-            return n
+            yield n
         n += 1
 
 
-number = int(input("Enter the number: "))
-print("Next Happy number is:", next_happy_number(number))
+
+if __name__ == "__main__":
+    try: 
+        number = int(input("Enter the number: "))
+        gen = next_happy_number(number) 
+        print("Next happy number is:", next(gen))
+    except ValueError as e:
+        print(f"Error occurred: {e}")
+    
+
+
