@@ -1,0 +1,1 @@
+url = "mysql+pymsql://root:Playdate@1208@localhost:3306/sample"
