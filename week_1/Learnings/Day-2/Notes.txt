@@ -1,0 +1,31 @@
+----Learned about Keywords----- 
+ * Keywords are reserved words in python , They have predefined meanings already.
+ * For checking keywords in python we have to "import keywords" and print them using "print(keyword.kwlist)"
+
+----Variables----
+ * Variables are name given to a memory location
+ * Rules for Varaiables
+   -> Must Strart with a letter or _
+   -> Can contain letters,numbers, _
+   -> Case sensitive (age != Age)
+
+----Namespaces----
+ * A Namespace is a cotainer that maps names to objects. 
+ * It helps python avoiding naming conflicts.
+ * LEGB Rule
+
+----Conditional statements----
+ * if
+ * elif
+ * else
+
+----Looping Statements----
+* for
+* while
+* break
+* continue
+----operators----
+* Assignment operators
+* Arithmetic operators
+* Comparision operators
+
